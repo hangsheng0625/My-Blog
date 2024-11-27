@@ -23,7 +23,9 @@ class AdminPostController extends Controller
     {
         Post::create(array_merge($this->validatePost(), [
             'user_id' => request()->user()->id,
-            'thumbnail' => request()->file('thumbnail')->store('thumbnails')
+            'thumbnail' => request()->hasFile('thumbnail') 
+            ? request()->file('thumbnail')->store('thumbnails') 
+            : null, // Set to null if no thumbnail is uploaded
         ]));
 
         return redirect('/');
@@ -60,7 +62,7 @@ class AdminPostController extends Controller
 
         return request()->validate([
             'title' => 'required',
-            'thumbnail' => $post->exists ? ['image'] : ['required', 'image'],
+            'thumbnail' => $post->exists ? ['image'] : ['nullable', 'image'],
             'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post)],
             'excerpt' => 'required',
             'body' => 'required',
