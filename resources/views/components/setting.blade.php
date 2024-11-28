@@ -7,8 +7,6 @@
 
     <div class="flex">
         <aside class="w-48 flex-shrink-0">
-
-
             <ul>
                 <li>
                     <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Posts</a>
