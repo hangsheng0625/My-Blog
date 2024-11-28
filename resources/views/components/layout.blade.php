@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>Liaw Hang Sheng Portfolio</title>
+<title>HsLiawPortfolio</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
             {{--Homepage--}}
             <a href="/"
                class="ml-6 text-xs font-bold uppercase {{ request()->is('/') ? 'text-blue-500' : '' }}
-               hover:text-blue-500 hover:text-base
                transform hover:scale-150
                transition-all duration-300
                hover:font-extrabold">
@@ -35,15 +34,27 @@
             @auth
                 <x-dropdown>
                     <x-slot name="trigger">
-                        <button class="text-xs font-bold uppercase">
-                            dashboard
+                        <button class="ml-6 text-xs font-bold uppercase
+                            transform hover:scale-150
+                            transition-all duration-300
+                            hover:font-extrabold">
+                            Dashboard
                         </button>
                     </x-slot>
+
+                    <x-dropdown-item
+                        href="/admin/posts/create"
+                        :active="request()->is('admin/posts/create')"
+                        class="text-xs "
+                    >
+                        Posts
+                    </x-dropdown-item>
 
                     <x-dropdown-item
                         href="#"
                         x-data="{}"
                         @click.prevent="document.querySelector('#logout-form').submit()"
+                        class="text-xs"
                     >
                         Log Out
                     </x-dropdown-item>
@@ -55,18 +66,16 @@
             @else
                 <a href="/login"
                    class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}
-                      hover:text-blue-500 hover:text-base
                       transform hover:scale-150
                       transition-all duration-300
                       hover:font-extrabold">
-                    dashboard
+                    Dashboard
                 </a>
             @endauth
 
             {{--Contact Me--}}
             <a href="#newsletter"
                class="ml-6 text-xs font-bold uppercase {{ request()->is('#newsletter') ? 'text-blue-500' : '' }}
-                      hover:text-blue-500 hover:text-base
                       transform hover:scale-150
                       transition-all duration-300
                       hover:font-extrabold">
@@ -75,9 +84,7 @@
 
             {{--My blog--}}
             <a href="/my-blog"
-
                class="ml-6 text-xs font-bold uppercase {{ request()->is('my-blog') ? 'text-blue-500' : '' }}
-                      hover:text-blue-500 hover:text-base
                       transform hover:scale-150
                       transition-all duration-300
                       hover:font-extrabold">
@@ -85,9 +92,8 @@
             </a>
 
             {{--Projects--}}
-            <a href="/login"
+            <a href="/project"
                class="ml-6 text-xs font-bold uppercase {{ request()->is('newsletter') ? 'text-blue-500' : '' }}
-                      hover:text-blue-500 hover:text-base
                       transform hover:scale-150
                       transition-all duration-300
                       hover:font-extrabold">
