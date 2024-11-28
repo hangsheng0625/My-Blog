@@ -9,6 +9,8 @@
     
         - Complete Home page by including tech stack, achievements, certs...
 
+        - design
+
 http://laravelfromscratch.com
 
 ## Installation
