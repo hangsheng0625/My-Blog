@@ -1,5 +1,14 @@
 # Laravel From Scratch Blog Demo Project
 
+## To do: 
+        - Make sure the category selection is working
+       
+        - Add the duration for each project
+       
+        - Also do the manually creating project function
+    
+        - Complete Home page by including tech stack, achievements, certs...
+
 http://laravelfromscratch.com
 
 ## Installation
