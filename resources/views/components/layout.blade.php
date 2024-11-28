@@ -88,16 +88,16 @@
                       transform hover:scale-150
                       transition-all duration-300
                       hover:font-extrabold">
-                My Blog
+                Blog
             </a>
 
             {{--Projects--}}
-            <a href="/project"
+            <a href="/projects"
                class="ml-6 text-xs font-bold uppercase {{ request()->is('newsletter') ? 'text-blue-500' : '' }}
                       transform hover:scale-150
                       transition-all duration-300
                       hover:font-extrabold">
-                Projects
+                Project
             </a>
         </div>
     </nav>

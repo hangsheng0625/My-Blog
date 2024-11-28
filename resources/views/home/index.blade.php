@@ -1,5 +1,3 @@
-
-
 <x-layout>
     <section class="intro-section text-center py-20 bg-gray-100">
         <h1 class="text-3xl font-bold text-gray-900">Hello World! I'm Liaw Hang Sheng</h1>
