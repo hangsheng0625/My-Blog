@@ -1,0 +1,9 @@
+/* Default styling for the link */
+a {
+    transition: font-size 0.3s ease;
+}
+
+/* When the page is scrolled, the font size will increase */
+a.enlarged {
+    font-size: 1.25rem; /* Increase the font size as per your preference */
+}
