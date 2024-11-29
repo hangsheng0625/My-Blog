@@ -22,5 +22,14 @@ class PostController extends Controller
             'post' => $post
         ]);
     }
+//    public function indexByCategory(Category $category)
+//    {
+//        return view('admin.posts.index', [
+//            'posts' => $category->posts()->paginate(10), // Filter posts by category
+//            'categories' => Category::all(), // For dropdown menu
+//            'currentCategory' => $category // Highlight the selected category
+//        ]);
+//    }
+
 
 }

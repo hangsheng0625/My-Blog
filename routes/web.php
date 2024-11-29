@@ -12,6 +12,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+//Route::get('/categories/{category:slug}', [PostController::class, 'indexByCategory'])->name('posts.byCategory');
+
 
 Route::get('/my-blog', [PostController::class, 'index'])->name('my-blog');
 

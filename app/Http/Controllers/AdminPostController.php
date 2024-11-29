@@ -12,7 +12,9 @@ class AdminPostController extends Controller
     public function index()
     {
         return view('admin.posts.index', [
-            'posts' => Post::paginate(50)
+            'posts' => Post::paginate(50),
+            'categories' => Category::all(), // Pass all categories to the view
+            'currentCategory' => null // Default to no category selected
         ]);
     }
 

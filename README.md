@@ -1,7 +1,7 @@
 # Laravel From Scratch Blog Demo Project
 
 ## To do: 
-        - Make sure the category selection is working
+        - Make sure the category selection is working (Done)
        
         - Add the duration for each project
        
