@@ -7,3 +7,15 @@ a {
 a.enlarged {
     font-size: 1.25rem; /* Increase the font size as per your preference */
 }
+
+/*.dropdown-item {*/
+/*    display: block;  !* Ensure the items stack vertically *!*/
+/*    width: 100%;  !* Make them fill the available width *!*/
+/*    text-align: center; !* Optional: Center the text *!*/
+/*    padding: 8px; !* Adjust padding to create equal spacing *!*/
+/*    box-sizing: border-box; !* Make padding part of width calculation *!*/
+/*}*/
+
+/*.dropdown-item:hover {*/
+/*    background-color: #e2e8f0; !* Optional: Change background on hover *!*/
+/*}*/

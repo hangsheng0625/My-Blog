@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting heading="Manage Posts">
+    <x-post-setting heading="Manage Posts">
         <div class="space-y-6" x-data>
             @foreach ($categories as $category)
                 @if ($category->posts->count() > 0)
@@ -87,5 +87,5 @@
                 <p class="text-center text-gray-500 py-4">No posts found.</p>
             @endif
         </div>
-    </x-setting>
+    </x-post-setting>
 </x-layout>

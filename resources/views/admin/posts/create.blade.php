@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting heading="Publish New Post">
+    <x-post-setting heading="Publish New Post">
         <form method="POST" action="/admin/posts" enctype="multipart/form-data">
             @csrf
             <x-form.input name="title" required />
@@ -42,7 +42,7 @@
 
             <x-form.button>Publish</x-form.button>
         </form>
-    </x-setting>
+    </x-post-setting>
 </x-layout>
 
 <script>

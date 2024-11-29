@@ -11,6 +11,23 @@
         scroll-behavior: smooth;
     }
 
+    .dropdown-item {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 4px;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        border-collapse: collapse;
+    }
+
+    .dropdown-item:hover {
+        background-color: mediumblue; /* Optional: Change background on hover */
+
+    }
+
 </style>
 
 <body style="font-family: Open Sans, sans-serif">
@@ -45,16 +62,24 @@
                     <x-dropdown-item
                         href="/admin/posts/create"
                         :active="request()->is('admin/posts/create')"
-                        class="text-xs "
+                        class="text-xs dropdown-item"
                     >
-                        Posts
+                        Edit Posts
+                    </x-dropdown-item>
+
+                    <x-dropdown-item
+                        href="/admin/projects/create"
+                        :active="request()->is('admin/projects/create')"
+                        class="text-xs dropdown-item"
+                    >
+                        Edit Projects
                     </x-dropdown-item>
 
                     <x-dropdown-item
                         href="#"
                         x-data="{}"
                         @click.prevent="document.querySelector('#logout-form').submit()"
-                        class="text-xs"
+                        class="text-xs dropdown-item"
                     >
                         Log Out
                     </x-dropdown-item>

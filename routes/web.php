@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
@@ -23,6 +24,7 @@ Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store
 
 Route::post('newsletter', NewsletterController::class);
 
+// Register
 //Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 //Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
@@ -30,13 +32,19 @@ Route::post('newsletter', NewsletterController::class);
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
+// Logout
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 // Project
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])->name('projects.show');
 
-// Admin Section
+// Admin Section Posts
 Route::middleware('can:admin')->group(function () {
     Route::resource('admin/posts', AdminPostController::class)->except('show');
+});
+
+// Admin Section Projects
+Route::middleware('can:admin')->group(function () {
+    Route::resource('admin/projects', AdminProjectController::class)->except('show');
 });
