@@ -15,7 +15,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/my-blog', [PostController::class, 'index'])->name('my-blog');
 
-
+// Post
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
 
@@ -24,11 +24,13 @@ Route::post('newsletter', NewsletterController::class);
 //Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 //Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
+// Login section
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
+// Project
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])->name('projects.show');
 
