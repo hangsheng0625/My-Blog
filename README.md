@@ -3,9 +3,9 @@
 ## To do: 
         - Make sure the category selection is working (Done)
        
-        - Add the duration for each project
+        - Add the duration for each project (Done)
        
-        - Also do the manually creating project function
+        - Also do the manually creating project function (Done)
     
         - Complete Home page by including tech stack, achievements, certs...
 
