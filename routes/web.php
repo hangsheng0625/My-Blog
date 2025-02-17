@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\AdminProjectController;
+use App\Http\Controllers\ChatBotController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/chat', [ChatBotController::class, 'getChatResponse']);
 
 //Route::get('/categories/{category:slug}', [PostController::class, 'indexByCategory'])->name('posts.byCategory');
 
